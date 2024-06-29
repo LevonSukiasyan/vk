@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #edeef0;
+}
+
+.registration {
+    padding: 12px;
+    display: flex;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.qr-part {
+    gap: 15px;
+    display: flex;
+    padding: 50px;
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    justify-content: space-around;
+}
+
+.qr-text-part {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.qr-title {
+    color: #000;
+    font-size: 20px;
+}
+
+.qr-text {
+    color: #818c99;
+}
+
+.qr-link {
+    color: #2688eb;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: min-content;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.qr-link:hover {
+    background-color: #edeef0;
+}
+
+.register-part {
+    display: flex;
+    padding: 15px 30px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.register-inputs {
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.icon {
+    width: 48px;
+}
+
+.register-title {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.register-text {
+    font-size: 15px;
+    color: #818c99;
+}
+
+.register-inp {
+    width: 280px;
+    height: 36px;
+    border: none;
+    outline: none;
+    padding: 0px 12px;
+    border-radius: 8px;
+    border: 1px solid #818c99;
+    background-color: #edeef0;
+}
+
+.save {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    color: #818c99;
+}
+
+.register-btn {
+    width: 304px;
+    height: 36px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #2688eb;
+}
+
+.text-part {
+    color: #99a2ad;
+    font-size: 11px;
+}
+
+.text-part a {
+    color: #6d7885;
+    text-decoration: none;
+}
+
+.text-part a:hover {
+    text-decoration: underline;
+}

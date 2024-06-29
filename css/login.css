@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #edeef0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-menu {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.container {
+    width: 71.5%;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 70px 0px 25px 0px;
+}
+
+.content .container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.mobile {
+    display: flex;
+    margin-left: 30px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mobile-title {
+    margin: 6px;
+    color: #000;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.mobile-text {
+    color: #626d7a;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.mobile-img {
+    width: 350px;
+    margin: 35px 0px 10px 0;
+}
+
+.mobile-buttons {
+    gap: 35px;
+    display: flex;
+    font-size: 13px;
+    color: #3770b1;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.mobile-button {
+    gap: 6px;
+    display: flex;
+}
+
+.mobile-button {
+    cursor: pointer;
+}
+
+.products {
+    display: flex;
+    color: #626d7a;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px 15px 0px;
+}
+
+.products:hover svg {
+    padding-left: 3px;
+    transition: ease 0.1s;
+}
+
+.product-link {
+    color: #2a5885;
+    text-decoration: none;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+}
+
+.login {
+    gap: 16px;
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-part {
+    gap: 20px;
+    display: flex;
+    padding: 30px 20px;
+    border-radius: 15px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.login-icon {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-icon svg {
+    color: #0077ff;
+}
+
+.login-title {
+    font-size: 20px;
+}
+
+.login-inputs {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-inp {
+    padding: 9px;
+    width: 252px;
+    outline: none;
+    border-radius: 8px;
+    background-color: #f0f2f5;
+    border: 1px solid #0000001f;
+}
+
+.save {
+    gap: 5px;
+    width: 100%;
+    display: flex;
+    margin-top: 5px;
+    color: #626d7a;
+}
+
+.login-btn {
+    width: 100%;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 0px;
+    border-radius: 8px;
+    background-color: #447bba;
+}
+
+.qr-code {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    font-size: 13px;
+    padding: 25px 0 0 0;
+    border-top: 1px solid #0000001f;
+}
+
+.qr-text-part {
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.qr-title {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.qr-code {
+    color: #6d7885;
+}
+
+.qr-link {
+    color: #2d81e0;
+    text-decoration: none;
+}
+
+.create-account {
+    gap: 15px;
+    display: flex;    
+    padding: 32px 24px;
+    text-align: center;
+    border-radius: 8px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.create-btn {
+    width: 272px;
+    height: 36px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #4bb34b;
+}
+
+.create-account p {
+    color: #99a2ad;
+}
+
+.create-account a {
+    color: #626d7a;
+    text-decoration: none;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
+
+.recommendation {
+    color: #626d7a;
+    text-decoration: none;
+}
+
+.recommendation:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-list {
+    display: flex;
+    font-size: 13px;
+    list-style: none;
+    padding: 5px 0px 45px 0px;
+    justify-content: space-between;
+}
+
+.footer-list li {
+    gap: 20px;
+    display: flex;
+}
+
+.footer-list a {
+    color: #2a5885;
+    text-decoration: none;
+}
+
+.footer-list a:hover {
+    text-decoration: underline;
+}
+
+.horizontal-child {
+    display: flex;
+}
+
+.horizontal-child p {
+    color: #626d7a;
+}
+
