@@ -12,7 +12,7 @@ input.addEventListener('input', function(event) {
 });
 
 btn.addEventListener('click', function () {
-    let storage = localStorage.getItem('registerNumber')
+    let storage = localStorage.getItem('registerNumber');
 
     if (storage) {
         window.location.href = '/html/mainPage.html';
