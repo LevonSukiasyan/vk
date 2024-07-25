@@ -7,6 +7,46 @@ let statusSecondPart = document.querySelector('.status-second-part');
 let statusThirdPart = document.querySelector('.status-third-part');
 let createPost = document.querySelector('.create-post-btn');
 let posts = document.querySelector('.posts');
+let storiesPart = document.querySelector('.stories-part')
+let createStory = document.querySelector('.create-story')
+let modalContainer = document.querySelector('.modal-container')
+let modalContent = document.querySelector('.modal-content');
+let colorBorders = document.querySelectorAll('.color-border');
+let modalColors = document.querySelectorAll('.modal-color');
+let settingsPart = document.querySelectorAll('.settings-part');
+let settingPartColor = document.querySelectorAll('.svg-icon path');
+let textFamily = document.querySelectorAll('.text-family');
+let modalText = document.querySelector('.modal-text');
+let settingsFirstPart = document.querySelector('.settings-first-part');
+let settingsSecondPart = document.querySelector('.settings-second-part');  
+let settingsContentPart1 = document.querySelector('.settings-content-part1');
+let settingsContentPart2 = document.querySelector('.settings-content-part2');
+let radios = document.querySelectorAll('.radios');
+let addStory = document.querySelector('.add-modal');
+let closeModal = document.querySelector('.close-modal');
+let storyModalContainer = document.querySelector('.story-modal-container');
+let storyModalContent = document.querySelector('.story-modal-content');
+let closeStoryModal = document.querySelector('.close-story-modal');
+let modalStoryText = document.querySelector('.modal-story-text');
+let colors = [
+                '#fff','#000','#ff3301','#ff8c49','#f9d827','#2eba48',
+                '#4189e8','#9f4bed','#69e4b3','#ff84a0','#f7a978','#f8786c',
+                '#8b3232','#93b658','#556e35','#5b4490','#1b1b1b','#333333',
+                '#4d4d4d','#666','#808080','#999','#b3b3b3','#ccc',
+                '#05a872','#0ad692','#22f1ac','#55f1bd','#86f3cf','#b6f6e1',
+            ];
+let divColors = document.querySelectorAll('.div-color')
+let fonts = [
+    '"Roboto", sans-serif',
+    '"Pacifico", cursive',
+    '"Amatic SC", sans-serif',
+    '"Open Sans", sans-serif',
+    '"Oswald", sans-serif',
+    '"Lobster", sans-serif',
+    '"Playwrite DK Uloopet", cursive',
+    '"Playwrite CL", cursive',
+    '"Sigmar One", sans-serif'
+];
 
 account.addEventListener('click', function () {
     accountMenu.classList.toggle('open-close');
@@ -115,6 +155,157 @@ function loadPostsFromLocalStorage() {
     }
 }
 
+createStory.addEventListener('click', function () {
+    modalContainer.style.display = 'flex'    
+})
+
+modalColors.forEach((modalColor,index) => {
+    modalColor.style.backgroundColor = colors[index];
+
+    modalColor.addEventListener('click', function () {
+        modalText.style.backgroundColor = modalColor.style.backgroundColor
+        modalContent.style.backgroundColor = modalColor.style.backgroundColor        
+    })
+});
+
+divColors.forEach((textColor,index) => {
+    textColor.style.backgroundColor = colors[index];
+
+    textColor.addEventListener('click', function () {
+
+        modalText.style.color = textColor.style.backgroundColor  
+        
+        divColors.forEach(elem => {
+            elem.innerHTML = ''
+        });
+
+        this.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>'
+    })
+});
+
+colorBorders.forEach(colorBorder => {
+    colorBorder.addEventListener('click',function () {
+
+        colorBorders.forEach(elem => {
+            elem.classList.remove('colored-border')
+        });
+
+        this.classList.toggle('colored-border');
+    })
+});
+
+settingsPart.forEach((elem,index) => {
+    elem.addEventListener('click',  function () {
+        settingPartColor[0].style.fill = '#a7a7a7'
+        settingPartColor[1].style.fill = '#a7a7a7'
+        settingPartColor[index].style.fill = '#447bba';
+
+        settingsPart[0].style.borderBottom = '2px solid #f0f2f5'
+        settingsPart[1].style.borderBottom = '2px solid #f0f2f5'
+        this.style.borderBottom = '2px solid #447bba'
+    })
+});
+
+textFamily.forEach((elem,index) => {
+    elem.style.fontFamily = fonts[index]
+});
+
+settingsFirstPart.addEventListener('click', function () {
+    settingsContentPart1.style.display = "flex"
+    settingsContentPart2.style.display = "none"
+})
+
+settingsSecondPart.addEventListener('click', function () {
+    settingsContentPart1.style.display = "none"
+    settingsContentPart2.style.display = "flex"
+})
+
+radios.forEach((radio,index) => {
+    radio.addEventListener('click', function () {
+        modalText.style.fontFamily = fonts[index]
+    })
+});
+
+modalText.addEventListener('input', function () {
+    this.style.height = 'auto'; 
+    this.style.height = (this.scrollHeight + 10) + 'px'; 
+});
+
+closeModal.addEventListener('click', function () {
+    modalContainer.style.display = 'none'
+})
+
+addStory.addEventListener('click', function () {
+    if (modalText.value.length) {
+        setStory(modalText.style.backgroundColor, modalText.value, modalText.style.fontFamily);
+        modalText.value = ''; 
+        modalText.style.backgroundColor = '';
+        modalContent.style.backgroundColor = '#fff';
+        modalText.style.color = ''; 
+        modalText.style.fontFamily = '';
+        modalContainer.style.display = 'none'; 
+    }    
+})
+
+function setStory(backgroundColor, text, fontFamily) {
+    let storyHTML = `
+        <div class="story added-story" style="background-color: ${backgroundColor};">
+            <div class="icon-part" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                <div class="story-text" style="color: ${modalText.style.color}; font-family: ${fontFamily}; text-align: center;">${text}</div>
+            </div>                                
+        </div>`;
+    
+    storiesPart.insertAdjacentHTML('beforeend', storyHTML);
+    
+    let storage = localStorage.getItem('stories');
+    let storiesArray = storage ? JSON.parse(storage) : [];
+    
+    storiesArray.push({ backgroundColor, text, color: modalText.style.color, fontFamily });
+    localStorage.setItem('stories', JSON.stringify(storiesArray));
+    addClickEventToStories();
+
+}
+
+function loadStoriesFromLocalStorage() {
+    let storage = localStorage.getItem('stories');
+    
+    if (storage) {
+        let storiesArray = JSON.parse(storage);
+        storiesArray.forEach(story => {
+            let storyHTML = `
+                <div class="story added-story" style="background-color: ${story.backgroundColor};">
+                    <div class="icon-part" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                        <div class="story-text" style="color: ${story.color}; font-family: ${story.fontFamily}; text-align: center;">${story.text}</div>
+                    </div>                                
+                </div>`;
+            
+            storiesPart.insertAdjacentHTML('beforeend', storyHTML);
+        });
+
+        addClickEventToStories();
+    }
+}
+
+function addClickEventToStories() {
+    let addedStories = document.querySelectorAll('.added-story');
+    addedStories.forEach(story => {
+        story.addEventListener('click', function () {
+            let storyText = story.querySelector('.story-text');
+            storyModalContent.style.backgroundColor = story.style.backgroundColor;
+            modalStoryText.style.color = storyText.style.color;
+            modalStoryText.style.fontFamily = storyText.style.fontFamily;
+            modalStoryText.style.textAlign = 'center';
+            modalStoryText.innerHTML = storyText.innerHTML;
+            storyModalContainer.style.display = 'flex';
+        });
+    });
+}
+
+closeStoryModal.addEventListener('click', function () {
+    storyModalContainer.style.display = 'none';
+});
+
 window.addEventListener('DOMContentLoaded', function () {
     loadPostsFromLocalStorage();
+    loadStoriesFromLocalStorage();
 });
